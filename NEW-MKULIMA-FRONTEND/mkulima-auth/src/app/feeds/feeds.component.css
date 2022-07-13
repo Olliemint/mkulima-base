@@ -1,0 +1,234 @@
+.feeds-section {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.card-profile{
+    margin-top: 2.5em;
+    
+    width: 310px;
+    height: 436px;
+    top: 175px;
+
+    background: #F5F5F5;
+    border-radius: 12px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+.feed1{
+    box-sizing: border-box;
+
+    margin-top: 2.5em;
+    width: 562px;
+    height: 779px;
+    
+
+    border: 1px solid #000000;
+    border-radius: 5px;
+    box-shadow: rgba(50, 50, 105, 0.15) 0px 2px 5px 0px, rgba(0, 0, 0, 0.05) 0px 1px 1px 0px;
+}
+.card-side1{
+    margin-top: 2.5em;
+    width: 310px;
+    height: 281px;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    background: #F5F5F5;
+    border-radius: 11px;
+}
+
+.card-side2{
+    width: 310px;
+    height: 281px;
+    margin-top: 45px;
+    background: #F5F5F5;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    border-radius: 11px;
+}
+
+.myfeeds{
+    position: relative;
+    width: 310px;
+    height: 281px;
+    margin-top: 45px;
+    background: #F5F5F5;
+    border-radius: 12px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+
+.profile-hero{
+    line-height: 39px;
+    text-align: center;
+    background-color: #195C44;
+    padding: 5px 0px;
+    color: white;
+    border-radius: 10px 10px 0px 0px;
+}
+
+.pimg{
+    width: 92px;
+    height: 120px;
+    background-image: url("https://raw.githubusercontent.com/Misigo94/Mkulima_Angular/main/src/assets/images/team-member-placeholder.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+.profile-data{
+    line-height: 24px;
+    color: #000000;
+}
+
+.profile-section{
+    display: flex;
+    gap: 1em;
+    margin-left: 1em;
+    padding-top: 0.5em;
+}
+
+.profile-desc{  
+    width: 306px;
+    height: 82px;
+    font-size: 18px;
+    color: #000000;
+    padding-left: 27px;
+    margin-top: 20px;
+}
+
+.profile-edit{
+    margin-top: 29px;
+    margin-left: 31px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+}
+
+.profile-edit button{
+    border: none;
+    
+}
+
+.feed-hero{
+    text-align: center;
+    background-color: #195C44;
+    padding: 5px 0px;
+    color: white;
+    border-radius: 10px 10px 0px 0px;
+}
+
+.feeds {
+    background-color: #fefefe;
+    padding: 20px 20px 50px;
+    border-radius: 10px;
+}
+
+.feed-story{
+    width: 243px;
+    height: 48px;
+    margin-left: 47px;
+    padding-top: 20px;
+}
+
+.feed1-img{
+    width: 434px;
+    height: 350px;
+}
+
+.feed1-img img{
+    width: 434px;
+    height: 350px;
+    padding-top: 45px;
+    margin-left: 60px;
+}
+
+.feed-desc{
+    width: 357px;
+    height: 24px;
+    margin-left: 60px;
+    margin-top: 27px;
+}
+
+.replies-card{
+width: 438px;
+padding: 20px;
+margin-left: 56px;
+background: #F5F5F5;
+}
+
+.feed-replies{
+    margin-top: 18px;
+}
+
+.feed-replies h5{
+    margin-left: 70px;
+}
+
+.reply{
+    width: 357px;
+    margin-left: 14px;
+    padding: 15px;
+    color: #000000;
+}
+
+.comment-card input{
+    width: 438px;
+    padding: 12px;
+    background-color: #fffffc;
+}
+
+.comment-card input::placeholder{
+    width: 133px;
+    height: 24px;
+    padding-left: 23px;
+    font-size: 17px;
+    line-height: 24px;
+    color: #888888;
+}
+
+.comment-card{
+    margin-top: 27px;
+    margin-left: 56px;
+}
+
+.trends-hero h1{
+    padding-top: 20px;
+    width: 258px;
+    height: 39px;
+    text-align: center;
+    line-height: 39px;
+}
+
+.trends-category{
+    margin-top: 30px;
+    width: 163px;
+    height: 29px;
+    margin-left: 25px;
+    line-height: 29px;
+}
+
+.sider-hero{
+    height: 39px;
+    text-align: center;
+}
+
+.sider-image{
+    margin-left: 79px;
+    margin-top: 28px;
+    width: 144px;
+    height: 138px;
+}
+
+.sider-image img{
+    width: 144px;
+    height: 138px;
+}
+
+.sider-action{
+    display: flex;
+    justify-content: center;
+}
+
+.sider-action button{
+    border: none;
+    padding-top: 11px;
+    
+}

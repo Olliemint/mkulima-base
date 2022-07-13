@@ -1,0 +1,149 @@
+<!-- Hero Section -->
+<section class="hero">
+  <div class="hero-wrapper">
+    <h1 class="hero-title">Mkulima <span class="color">Base</span></h1>
+    <p class="hero-intro">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem, aut
+      exercitationem quidem sint quibusdam facilis quam voluptatem rerum
+      temporibus ut!
+    </p>
+    <div class="text-center">
+      <a href="#">
+        <button class="btn btn-outline-mk">Discover More</button>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Intro section -->
+<section class="intro py-5 body">
+  <div class="container">
+    <div class="row row-cols-lg-2 row-cols-md-2 row-cols-sm-1">
+      <div class="col-4">
+        <h2 class="intro-subtitle fs-4">What we do</h2>
+        <h3 class="intro-title fs-2">Mkulima Base</h3>
+      </div>
+      <div class="col-8">
+        <p class="lh-4">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero hic a
+          tempore, tempora voluptate, minus est voluptas repellat sit aliquam
+          accusamus. Sit eligendi tempore alias soluta eaque perspiciatis modi
+          id!
+        </p>
+        <p class="lh-4">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero hic a
+          tempore, tempora voluptate, minus est voluptas repellat sit aliquam
+          accusamus. Sit eligendi tempore alias soluta eaque perspiciatis modi
+          id!
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Register Section -->
+<section class="register py-5 bg-dark">
+  <div class="container">
+    <h3 class="regis-text text-center my-4 text-white fs-2 fw-500">
+      Register below to receive advises from other farmers and experts
+    </h3>
+    <form
+      [formGroup]="form"
+      (ngSubmit)="registerUser()"
+      style="max-width: 800px"
+      class="mx-auto"
+    >
+      <div class="form-group d-flex mk-group">
+        <input
+          formControlName="email"
+          class="form-control"
+          type="email"
+          name="email"
+          placeholder="email"
+        />
+      </div>
+      <div class="form-group d-flex mk-group">
+        <input
+          formControlName="first_name"
+          class="form-control"
+          type="text"
+          name="firstname"
+          placeholder="first name"
+        />
+        <input
+          formControlName="last_name"
+          class="form-control"
+          type="text"
+          name="lastname"
+          placeholder="last name"
+        />
+      </div>
+
+      <div class="form-group d-flex mk-group">
+        <input
+          formControlName="password"
+          class="form-control"
+          type="password"
+          name="password"
+          placeholder="password"
+        />
+        <input
+          formControlName="password_confirm"
+          class="form-control"
+          type="password"
+          name="password_confirm"
+          placeholder="confirm password"
+        />
+      </div>
+
+      <input
+        class="btn mk-btn form-control signup"
+        type="submit"
+        value="REGISTER"
+      />
+    </form>
+  </div>
+</section>
+
+<!-- Feeds section -->
+<section class="feeds-categories py-5 body">
+  <div class="container">
+    <h3 class="feeds-title my-4 text-center">
+      Select Category Below To Find Answers To Your Questions
+    </h3>
+    <div class="row row-cols-lg-4 row-cols-md-2 row-cols-sm-1 my-5">
+      <div class="col-3">
+        <a class="card-link" href="#">
+          <div class="card veg-card p-3">
+            <h4 class="mk-card-title">Fresh</h4>
+            <p class="mk-card-subtitle">Vegetables</p>
+          </div>
+        </a>
+      </div>
+      <div class="col-3">
+        <a class="card-link" href="#">
+          <div class="card dairy-card p-3">
+            <h4 class="mk-card-title">Dairy</h4>
+            <p class="mk-card-subtitle">Produce</p>
+          </div>
+        </a>
+      </div>
+      <div class="col-3">
+        <a class="card-link" href="#">
+          <div class="card live-card p-3">
+            <h4 class="mk-card-title">Livestock</h4>
+            <p class="mk-card-subtitle">Animals</p>
+          </div>
+        </a>
+      </div>
+      <div class="col-3">
+        <a class="card-link" href="#">
+          <div class="card agri-card p-3">
+            <h4 class="mk-card-title">Agriculture</h4>
+            <p class="mk-card-subtitle">General</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

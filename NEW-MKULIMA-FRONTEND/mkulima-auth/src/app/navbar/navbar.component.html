@@ -1,0 +1,76 @@
+<nav class="navbar navbar-expand-lg navbar-dark mk-nav fixed-top">
+  <div class="container">
+    <a class="navbar-brand fs-3" routerLink="">Mkulima Base</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <!-- If Not Authenticated -->
+    <div
+      class="collapse navbar-collapse"
+      id="navbarSupportedContent"
+      *ngIf="!authenticated"
+    >
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a routerLink="" class="nav-link active" aria-current="page">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" routerLink="about"
+            >About</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" routerLink="contacts">contacts</a>
+        </li>
+      </ul>
+      <a routerLink="/login">
+        <input class="mx-2 mk-btn" type="button" value="LOGIN" />
+      </a>
+      <a routerLink="/register">
+        <input class="mx-2 mk-btn signup" type="button" value="Signup" />
+      </a>
+    </div>
+
+    <!-- If Authenticated -->
+    <div
+      class="collapse navbar-collapse"
+      id="navbarSupportedContent"
+      *ngIf="authenticated"
+    >
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" routerLink="about"
+            >About</a
+          >
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link active" routerLink="catalogue">catalogue</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" routerLink="feeds">feeds</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" routerLink="contacts">contacts</a>
+        </li>
+      </ul>
+      <a routerLink="/weather">
+        <button class="mx-2 mk-btn">Get Weather Forecast</button>
+      </a>
+      <a routerLink="/login" (click)="logout()">
+        <input class="mx-2 mk-btn" type="button" value="LOGOUT" />
+      </a>
+    </div>
+  </div>
+</nav>
