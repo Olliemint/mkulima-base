@@ -15,7 +15,17 @@
 </section>
 <section class="weather-results py-5">
   <div class="container">
-    <p>Weather Forecast Results</p>
-    <p>results</p>
+    <div class="card ">    
+                
+      <div class="d-flex">
+       <div class="ui list" *ngFor="let climate of weatherData.daily.data ">  
+
+
+          <h6 class="flex-grow-1">{{climate.day}}</h6>
+          <h6 class="flex-grow-1">{{climate.summary}}</h6>
+         
+      </div>
+      </div>
+  </div>
   </div>
 </section>
