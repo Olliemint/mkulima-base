@@ -16,6 +16,7 @@ import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
 import { CatalogueComponent } from './catalogue/catalogue.component';
 import { FeedsComponent } from './feeds/feeds.component';
 import { WeatherComponent } from './weather/weather.component';
+import { ContactComponent } from './contact/contact.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { WeatherComponent } from './weather/weather.component';
     BreadcrumbComponent,
     CatalogueComponent,
     FeedsComponent,
-    WeatherComponent
+    WeatherComponent,
+    ContactComponent
 
   ],
   imports: [
