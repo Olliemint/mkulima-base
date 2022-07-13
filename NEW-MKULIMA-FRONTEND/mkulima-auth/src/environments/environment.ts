@@ -5,7 +5,6 @@
 export const environment = {
   production: false,
   api: 'https://mkulima-base.herokuapp.com/api',
-
 };
 
 /*
