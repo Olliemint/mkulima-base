@@ -1,3 +1,5 @@
+
+from tokenize import blank_re
 from django.db import models
 from django.contrib.auth.models import AbstractUser
 
@@ -24,10 +26,10 @@ class Reset(models.Model):
 
 class Feeds(models.Model):
     title = models.CharField(max_length=200, blank=True)
-    image = models.ImageField(upload_to='media/posts', default="default.jpg")
     description = models.TextField(max_length=300, blank=True)
-    comments = models.ManyToManyField('Comment', related_name='farmer_post',blank=True)
     category = models.ForeignKey('Category', on_delete=models.CASCADE, null=True)
+    image = models.ImageField(upload_to='media/posts', default="default.jpg")
+
     
     author =models.ForeignKey(User, on_delete=models.CASCADE, null=True)
 
@@ -35,6 +37,7 @@ class Feeds(models.Model):
         return self.title
 
 class Comment(models.Model):
+    
     comment = models.TextField(max_length=200, blank=True)
     author =models.ForeignKey(User, on_delete=models.CASCADE, null=True)
     feeds=models.ForeignKey(Feeds, on_delete=models.CASCADE, null=True)
@@ -65,7 +68,7 @@ class Merchandise(models.Model):
     name = models.CharField(max_length=200, blank=True)
     author = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
     description = models.TextField(blank=True)
-    image = models.ImageField(upload_to='media/merchandise', default="default.jpg")
+    image = models.ImageField(upload_to='media/merchandise', default="default.jpg",blank=True,null=True)
     date_posted = models.DateTimeField(auto_now_add=True, null=True, blank=True)
     
 

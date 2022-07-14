@@ -26,6 +26,7 @@ class ProfileSerializer(serializers.ModelSerializer):
 
 
 class MerchandiseSerializer(serializers.ModelSerializer):
+    
     class Meta:
         model = Merchandise
         fields = '__all__'
@@ -37,7 +38,6 @@ class CommentSerializer(serializers.ModelSerializer):
         
         
 class FeedsSerializer(serializers.ModelSerializer):
-    comments = CommentSerializer(many=True)
     class Meta:
         model = Feeds
         fields = '__all__'
