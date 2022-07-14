@@ -17,6 +17,7 @@ import { CatalogueComponent } from './catalogue/catalogue.component';
 import { FeedsComponent } from './feeds/feeds.component';
 import { WeatherComponent } from './weather/weather.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,7 +37,8 @@ import { WeatherComponent } from './weather/weather.component';
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [
     {

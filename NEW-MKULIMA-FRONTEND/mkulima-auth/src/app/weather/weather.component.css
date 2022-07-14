@@ -47,3 +47,9 @@
   .weather-results {
     min-height: 52vh;
   }
+  .card{
+    background-color: #195C44;
+    color: white;
+    top:5vh;
+  }
+  
