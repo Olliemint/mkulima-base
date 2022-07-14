@@ -77,19 +77,26 @@
         <div class="card shadow-lg mb-3" style="width: 16rem">
           <img
             class="img-thumbnail"
-            style="height: 260px"
             src="{{ catalogue.image }}"
-            class="card-img-top img-fluid"
+            class="img-fluid"
             alt="..."
           />
           <div class="card-body" style="background-color: #d9d9d9">
             <h5 class="card-title">{{ catalogue.name }}</h5>
             <p class="card-text">
-              {{ catalogue.description }}
+              {{ catalogue.description | slice: 0:45 }}
             </p>
 
-            <h4>{{ catalogue.author }}</h4>
+            <h4>{{ catalogue.author.name }}</h4>
           </div>
+          <a
+            href="#"
+            style="background-color: #195c44"
+            class="btn btn-block text-white"
+            data-bs-toggle="modal"
+            data-bs-target="#exampleModal"
+            >More Details</a
+          >
         </div>
       </div>
       <pagination-controls (pageChange)="page = $event"></pagination-controls>
