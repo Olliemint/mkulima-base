@@ -4,8 +4,7 @@
 
 export const environment = {
   production: false,
-  api: 'http://localhost:8000/api',
-  base:'http://localhost:8000/base'
+  api: 'https://mkulima-base.herokuapp.com/api',
 };
 
 /*

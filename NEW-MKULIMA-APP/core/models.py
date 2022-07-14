@@ -27,6 +27,8 @@ class Feeds(models.Model):
     image = models.ImageField(upload_to='media/posts', default="default.jpg")
     description = models.TextField(max_length=300, blank=True)
     comments = models.ManyToManyField('Comment', related_name='farmer_post',blank=True)
+    category = models.ForeignKey('Category', on_delete=models.CASCADE, null=True)
+    
     author =models.ForeignKey(User, on_delete=models.CASCADE, null=True)
 
     def __str__(self):
@@ -62,7 +64,6 @@ class Category(models.Model):
 class Merchandise(models.Model):
     name = models.CharField(max_length=200, blank=True)
     author = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
-    category = models.ForeignKey(Category, on_delete=models.CASCADE, null=True)
     description = models.TextField(blank=True)
     image = models.ImageField(upload_to='media/merchandise', default="default.jpg")
     date_posted = models.DateTimeField(auto_now_add=True, null=True, blank=True)

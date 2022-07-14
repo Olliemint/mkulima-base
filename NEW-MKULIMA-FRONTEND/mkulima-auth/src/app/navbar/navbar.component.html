@@ -66,11 +66,40 @@
         </li>
       </ul>
       <a routerLink="/weather">
-        <button class="mx-2 mk-btn">Get Weather Forecast</button>
+        <button class="mx-5 mk-btn">Get Weather Forecast</button>
       </a>
-      <a routerLink="/login" (click)="logout()">
+      <!-- <a routerLink="/login" (click)="logout()">
         <input class="mx-2 mk-btn" type="button" value="LOGOUT" />
-      </a>
+      </a> -->
+      <div class="dropdown text-end">
+        <a
+          href="#"
+          class="d-block link-dark text-decoration-none dropdown-toggle"
+          id="dropdownUser1"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >
+          <img
+            src="https://github.com/mdo.png"
+            alt="mdo"
+            width="32"
+            height="32"
+            class="rounded-circle"
+          />
+        </a>
+        <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1">
+          <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">Add Product</a></li>
+          
+          <!-- <li><a class="dropdown-item" href="#">Settings</a></li> -->
+          <li><a class="dropdown-item" href="#">Profile</a></li>
+          <li><hr class="dropdown-divider" /></li>
+          <li>
+            <a class="dropdown-item" routerLink="/login" (click)="logout()"
+              >Sign out</a
+            >
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
 </nav>

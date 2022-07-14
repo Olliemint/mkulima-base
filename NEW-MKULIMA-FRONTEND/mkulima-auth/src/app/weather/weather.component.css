@@ -47,9 +47,22 @@
   .weather-results {
     min-height: 52vh;
   }
+
   .card{
     background-color: #195C44;
     color: white;
     top:5vh;
   }
   
+
+
+  .weather-wrapper {
+    /* display: flex;
+    justify-content: space-between;
+    align-items: center; */
+    border: 1px solid lightgray;
+    padding: 50px;
+    border-radius: 10px;
+
+  }
+

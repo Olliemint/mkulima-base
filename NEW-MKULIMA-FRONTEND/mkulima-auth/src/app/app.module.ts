@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import {NgxPaginationModule} from 'ngx-pagination';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -16,6 +17,7 @@ import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
 import { CatalogueComponent } from './catalogue/catalogue.component';
 import { FeedsComponent } from './feeds/feeds.component';
 import { WeatherComponent } from './weather/weather.component';
+import { ContactComponent } from './contact/contact.component';
 
 
 @NgModule({
@@ -30,7 +32,8 @@ import { WeatherComponent } from './weather/weather.component';
     BreadcrumbComponent,
     CatalogueComponent,
     FeedsComponent,
-    WeatherComponent
+    WeatherComponent,
+    ContactComponent
 
   ],
   imports: [
@@ -38,7 +41,9 @@ import { WeatherComponent } from './weather/weather.component';
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    NgxPaginationModule,
+
   ],
   providers: [
     {
