@@ -9,6 +9,10 @@ export interface WeatherData {
     current: Current
     hourly: Hourly
     daily: Daily
+    city: string
+   
+    
+    
   }
   
   export interface Current {
@@ -102,4 +106,5 @@ export interface WeatherData {
     total: number
     type: string
   }
+
   

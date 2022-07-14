@@ -15,13 +15,17 @@ export class WeatherService {
  
     
   
+  getWeatherData(place_id: string):Observable<WeatherData> {
+    let params = new HttpParams();
+    params = params.append('place_id', place_id);
+    params = params.append('key','2mfy9j1ib41h5sv7ho81yba5pm8ucp92kwvv8rsl');
+     return this.http.get<WeatherData>('https://www.meteosource.com/api/v1/free/point?&sections=all&timezone=UTC&language=en&units=metric', {params: params}); 
+  }
+  }
 
-getWeatherData(place_id:string){
-   return this.http.get('https://www.meteosource.com/api/v1/free/point?place_id=eldoret&sections=all&timezone=UTC&language=en&units=metric&key=pib7gf1upu6j7n4apqbzr3ukf4y5uexvyjg3u83w'); 
 
 
 
-}
  
     // getWeatherData(place_id: string): Observable<WeatherData> {
     //   return this.http.get<WeatherData>(`${environment.apiUrl}/forecast?q={place_id}&appid=${environmanet.apiKey}`)} 
@@ -33,4 +37,3 @@ getWeatherData(place_id:string){
     //     .set('q', place_id)
     //     .set('units', 'metric')
     //     .set('mode', 'json')
-}
