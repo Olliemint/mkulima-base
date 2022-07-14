@@ -1,4 +1,4 @@
-from cgitb import reset
+
 import datetime
 import random
 import string
@@ -15,6 +15,7 @@ from .models import *
 from rest_framework import generics
 from .serializers import *
 from rest_framework import status
+from django.http import HttpResponse
 
 
 class RegisterAPIView(APIView):
@@ -175,6 +176,20 @@ class FeedsDetail(generics.RetrieveUpdateDestroyAPIView):
 class MerchandiseList(generics.ListCreateAPIView):
     queryset = Merchandise.objects.all()
     serializer_class =MerchandiseSerializer
+    
+    def post(self, request, *args, **kwargs):
+        
+        name = request.data['name']
+        author = request.user
+        
+        description = request.data['description']
+        image = request.data['image']
+        Merchandise.objects.create(name=name,author=author,description=description, image=image)
+        return Response({
+            'message':'merchandise created'
+            },
+           status=200
+           )
 
 class MerchandiseDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Merchandise.objects.all()
@@ -191,6 +206,9 @@ class CategoryDetail(generics.RetrieveUpdateDestroyAPIView):
 class CommentList(generics.ListCreateAPIView):
     queryset = Comment.objects.all()
     serializer_class =CommentSerializer
+    
+    def getComment(request):
+        
 
 class CommentDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Comment.objects.all()

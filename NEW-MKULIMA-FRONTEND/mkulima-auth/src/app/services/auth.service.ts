@@ -22,7 +22,7 @@ export class AuthService {
   }
 
   user() {
-    return this.http.get(`${environment.api}/user`);
+    return this.http.get<any>(`${environment.api}/user`);
   }
 
   refresh() {

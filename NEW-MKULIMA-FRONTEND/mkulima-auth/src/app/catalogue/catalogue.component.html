@@ -47,6 +47,27 @@
         <div   *ngFor="let catalogue of catalogues | paginate: { itemsPerPage:4, currentPage: page,
     totalItems:totalLength}" class="col md-4">
 
+
+<div class="container">
+  <h1 class="text-center mt-5">Merchandise Available</h1>
+  <div class="row my-5">
+    <div class="col md-4" *ngFor="let catalogue of catalogues">
+      <div class="card shadow-lg mb-3" style="width: 16rem">
+        <img
+          class="img-thumbnail"
+          style="height: 260px"
+          src="{{catalogue.image}}"
+          class="card-img-top img-fluid"
+          alt="..."
+        />
+        <div class="card-body" style="background-color: #d9d9d9">
+          <h5 class="card-title">{{catalogue.name}}</h5>
+          <p class="card-text">
+            {{catalogue.description}}
+          </p>
+
+          <h1>{{catalogue.author}}</h1>
+          
           <div class="card shadow-lg mb-3" style="width: 16rem">
             <img class="img-thumbnail" style="height: 260px" src="{{catalogue.image}}" class="card-img-top img-fluid"
               alt="..." />

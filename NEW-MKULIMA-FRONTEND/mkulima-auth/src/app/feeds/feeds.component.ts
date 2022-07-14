@@ -11,6 +11,7 @@ import { CatalogueFeedService } from 'src/app/services/catalogue-feed.service';
 export class FeedsComponent implements OnInit {
   feeds: any=[];
   categories: any= [];
+  comments: any= [];
   constructor(private feedService:CatalogueFeedService) { }
 
   ngOnInit(): void {
@@ -22,7 +23,18 @@ export class FeedsComponent implements OnInit {
       this.categories = data;
       console.log(this.categories);
     });
+
   }
+
+  getComments(id:number) {
+    this.feedService.getComment(id).subscribe((data)=>{
+      this.comments = data;
+      console.log(this.comments);
+    });
+
+  
+  }
+
 
 }
 

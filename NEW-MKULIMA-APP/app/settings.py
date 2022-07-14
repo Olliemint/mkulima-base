@@ -28,8 +28,9 @@ SECRET_KEY = 'django-insecure-nb0r4mtvj=@ojk9nld_w@)y+rxio48on_k=84cow$(hekx05^+
 DEBUG = True
 
 ALLOWED_HOSTS = [
+    '0.0.0.0',
     'mkulima-base.herokuapp.com',
-    '127.0.0.1',
+    '127.0.0.1'
     ]
 
 
