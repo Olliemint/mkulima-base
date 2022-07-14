@@ -1,6 +1,6 @@
 from rest_framework.serializers import ModelSerializer
 from .models import *
-from rest_framework import serializers,validators
+from rest_framework import serializers
 
 class UserSerializer(ModelSerializer):
     class Meta:
@@ -29,8 +29,15 @@ class MerchandiseSerializer(serializers.ModelSerializer):
     class Meta:
         model = Merchandise
         fields = '__all__'
-
+        
+class CommentSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Comment
+        fields = '__all__'
+        
+        
 class FeedsSerializer(serializers.ModelSerializer):
+    comments = CommentSerializer(many=True)
     class Meta:
         model = Feeds
         fields = '__all__'
@@ -40,7 +47,3 @@ class CategorySerializer(serializers.ModelSerializer):
         model = Category
         fields = '__all__'
 
-class CommentSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Comment
-        fields = '__all__'
