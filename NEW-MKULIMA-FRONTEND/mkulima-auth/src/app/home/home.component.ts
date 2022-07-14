@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+
 import { AuthService } from '../services/auth.service';
+import { CatalogueFeedService } from 'src/app/services/catalogue-feed.service';
+
 
 @Component({
   selector: 'app-home',
@@ -9,21 +12,36 @@ import { AuthService } from '../services/auth.service';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  message = '';
+  message: any =[];
   form!: FormGroup;
+  currentuser: any = [];
+  angForm: FormGroup;
 
-  constructor(
+
+  constructor(private fb: FormBuilder,
     private formBuilder: FormBuilder,
     private authService: AuthService,
-    private router: Router
-  ) { }
+    private router: Router,
+    private postservice:CatalogueFeedService
+  ) { 
+    this.angForm = fb.group({
+      name:['',Validators.required],
+      description:['',Validators.required],
+      image:[''],
+      author:[''],
+
+    })
+    
+
+  }
 
   ngOnInit(): void {
     this.authService.user().subscribe(
           {
             next: (res:any) => {
-              this.message = `Welcome ${res.first_name} ${res.last_name}`;
+              this.message = `Welcome ${res.first_name} ${res.last_name} ${res.id}`;
               AuthService.authEmitter.emit(true);
+              console.log(this.message);
             },
             error: err => {
               this.message = "You are not loggedin";
@@ -39,12 +57,29 @@ export class HomeComponent implements OnInit {
       password: '',
       password_confirm: '',
     })
+    this.getcurrent()
   }
 
   registerUser() {
     this.authService.register(this.form.getRawValue()).subscribe({
       next: () => this.router.navigate(['/login'])
   });
+  }
+
+  AddProduct(data:any) {
+    this.postservice.postCatalogue(this.angForm.value).subscribe((data) => {
+      
+      this.router.navigate(['catalogue']);
+    })
+
+  }
+
+  getcurrent(){
+    this.authService.user().subscribe((data:any) => {
+      this.currentuser = data;
+      console.log(this.currentuser);
+
+    })
   }
 
 }

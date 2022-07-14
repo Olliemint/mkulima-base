@@ -42,25 +42,27 @@
         </div>
       </div>
       <div class="col-md-5">
-        <div class="feeds">
+        <div class="feeds" *ngFor="let feed of feeds">
           <div class="feeds-img">
             <img
               class="img-fluid"
-              src="https://raw.githubusercontent.com/Misigo94/Mkulima_Angular/main/src/assets/images/Fall-army-worm.jpg"
+              src="{{feed.image}}"
               alt=""
             />
           </div>
           <div class="feed-desc">
-            <p>How can i deal with army worms?</p>
+            <p>
+              {{feed.description}}
+
+            </p>
           </div>
           <div class="feed-replies">
             <h5>Replies</h5>
             <div class="replies-card">
-              <div class="myreplies">
-                <div class="reply">
+              <div class="myreplies" >
+                <div class="reply" *ngFor="let comment of feed.comments">
                   <p>
-                    Tumia armykill pest control, hiyo ilinisaidia sana. Posted:
-                    29/06.22
+                    {{ comment.comment}}
                   </p>
                 </div>
               </div>
@@ -83,9 +85,12 @@
             <p class="fs-4">Posts Categories</p>
           </div>
           <div class="trends-category text-center">
-            <p>Mazao</p>
-            <p>Mimea</p>
-            <p>Mifugo</p>
+            <div *ngFor="let category of categories">
+              
+            <p>{{category.name}}</p>
+
+            </div>
+            
             <p>Discover more</p>
           </div>
         </div>

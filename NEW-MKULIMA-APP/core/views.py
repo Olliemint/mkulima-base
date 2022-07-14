@@ -14,6 +14,7 @@ from .models import Reset, User, UserToken
 from .models import *
 from rest_framework import generics
 from .serializers import *
+from rest_framework import status
 
 
 class RegisterAPIView(APIView):
@@ -148,12 +149,15 @@ class ResetAPIView(APIView):
         })
 
 class ProfileDetail(generics.RetrieveUpdateDestroyAPIView):
-    queryset = Profile.objects.all()
+    
     serializer_class = ProfileSerializer
 
-    # def get(self,request,*args,**kwargs):
-    #     user = request.user
-    #     profile=Profile.objects.get(user=user.id)
+    def get(self,request,*args,**kwargs):
+        id = request.user.profile.user
+        print(id)
+        profile=Profile.objects.get(user=id)
+        data = ProfileSerializer(profile, context={'request': request}).data
+        return Response(data, status=status.HTTP_200_OK)
 
 
 class ProfileList(generics.ListCreateAPIView):
