@@ -19,6 +19,7 @@ import { FeedsComponent } from './feeds/feeds.component';
 import { WeatherComponent } from './weather/weather.component';
 import { ContactComponent } from './contact/contact.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,7 +41,9 @@ import { ContactComponent } from './contact/contact.component';
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
+    FormsModule,
     NgxPaginationModule,
+
   ],
   providers: [
     {

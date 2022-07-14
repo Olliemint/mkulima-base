@@ -48,6 +48,14 @@
     min-height: 52vh;
   }
 
+  .card{
+    background-color: #195C44;
+    color: white;
+    top:5vh;
+  }
+  
+
+
   .weather-wrapper {
     /* display: flex;
     justify-content: space-between;
@@ -58,7 +66,3 @@
 
   }
 
-  .card {
-    background-color: #195C44;
-    color: #fff;
-  }

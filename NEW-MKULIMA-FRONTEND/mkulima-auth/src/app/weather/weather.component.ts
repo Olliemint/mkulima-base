@@ -17,6 +17,7 @@ export class WeatherComponent implements OnInit {
   data1!:Daum2;
     place_id: string = 'Nairobi';
     DatePipe:any;
+  
 
   constructor(private weatherService: WeatherService) {
 
