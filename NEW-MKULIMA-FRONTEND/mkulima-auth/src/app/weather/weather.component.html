@@ -1,8 +1,15 @@
 <section class="weather-search">
   <div class="container">
-    <form  #form="ngForm" (submit)="onSubmit()" class="form-group search-form text-center">
-      <input type="text" placeholder="Search city" name="city" [(ngModel)]="place_id">
-   
+    <form
+      #form="ngForm"
+      (submit)="onSubmit()"
+      class="form-group search-form text-center"
+    >
+      <input
+        type="text"
+        placeholder="Search city"
+        name="city"
+        [(ngModel)]="place_id"
       />
       <button class="btn btn-lg my-2 my-sm-0 mk-search" type="submit">
         Get Weather Forecast
@@ -11,134 +18,52 @@
   </div>
 </section>
 
-<!-- <section class="weather-results py-5">
+<!-- Weather Results Section -->
+<section class="weather-results py-5">
+  <div class="container">
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+      <div class="col" *ngFor="let climate of weatherData.daily.data">
+        <div class="card p-4">
+          <div class="d-flex">
+            <h6 class="flex-grow-1">{{ climate.day }}</h6>
+            <!-- <h6>{{weatherData.lat}}</h6> -->
+          </div>
 
-    
-          
-     
-    <div class="container" >
-       <div class="card">
-            <div class="weather-data">
-            <div class="location">{{ weatherData.elevation }}</div>
-            <div class="temperature">{{ weatherData.current.temperature| number: '1.0-0'}}°C</div>
+          <div class="d-flex flex-column temp mt-5 mb-3">
+            <h1 class="mb-0 font-weight-bold" id="heading">
+              {{ weatherData.current.temperature }}&deg; C
+            </h1>
+            <span class="small grey">{{ climate.summary }}</span>
+          </div>
+
+          <div class="d-flex">
+            <div class="temp-details flex-grow-1">
+              <p class="my-1">
+                <img src="https://i.imgur.com/B9kqOzp.png" height="17px" />
+
+                <span>{{ weatherData.current.wind.speed }} km/hr </span>
+              </p>
+
+              <p class="my-1">
+                <img src="https://i.imgur.com/wGSJ8C5.png" height="17px" />
+                <span> {{ climate.all_day.temperature_max }}&deg; C </span>
+              </p>
+
+              <p class="my-1">
+                <img src="https://i.imgur.com/wGSJ8C5.png" height="17px" />
+                <span>{{ climate.all_day.temperature_min }} &deg; C</span>
+              </p>
             </div>
-     
-        
-        <div class="lower-data" *ngFor="let climate of weatherData.hourly.data">
-            <div class="more-info-label">
-            More Information
+
+            <div>
+              <img src="https://i.imgur.com/Qw7npIg.png" width="100px" />
             </div>
-            <div class="more-info-container">
-            <div class="info-block">
-                <div class="info-block-label">
-                <img src="../assets/min.png">
-                <span>min</span>
-                </div>
-                <div class="info-block-value">
-                {{climate.temperature| number: '1.0-0'}}°C
-                </div>
-            </div>
-        
-            <div class="info-block">
-                <div class="info-block-label">
-                <img src="../assets/max.png">
-                <span>max</span>
-                </div>
-                <div class="info-block-value">
-                  {{climate.temperature| number: '1.0-0'}}°C
-                </div>
-            </div>
-        
-            <div class="info-block">
-                <div class="info-block-label">
-                <img src="../assets/humidity.png">
-                <span>humidity</span>
-                </div>
-                <div class="info-block-value">
-                {{climate.summary}}%
-                </div>
-            </div>
-        
-            <div class="info-block">
-                <div class="info-block-label">
-                <img src="../assets/wind.png">
-                <span>wind</span>
-                </div>
-                <div class="info-block-value">
-                {{climate.icon}} km/h
-                </div>
-            </div>
-            </div>
+          </div>
         </div>
+      </div>
     </div>
   </div>
 </section>
- -->
-<!-- <div class="container">
- <div class="row row-cols-1 row-cols-md-3 g-4" >
-  <div class="col" *ngFor="let climate of weatherData.daily.data" >
-    <div class="card h-100" >
-      <img src="https://mdbcdn.b-cdn.net/img/new/standard/city/041.webp" class="card-img-top" alt="Hollywood Sign on The Hill"/>
-      <div class="card-body">
-        <h5 class="card-title">{{climate.day}}</h5>
-        <p class="card-text">
-          {{climate.summary}}
-        </p>
-     
-    -->
-
-    <div class="container">
-      <div class="row row-cols-1 row-cols-md-3 g-4">
-        <div class="col" *ngFor="let climate of weatherData.daily.data"> 
-                 <div class="card p-4">    
-                  
-                     <div class="d-flex" >
-                         <h6 class="flex-grow-1">{{climate.day}}</h6>
-                         <!-- <h6>{{weatherData.lat}}</h6> -->
-                     </div>
-                      
-                     <div class="d-flex flex-column temp mt-5 mb-3">
-                         <h1 class="mb-0 font-weight-bold" id="heading"> {{weatherData.current.temperature}}&deg; C </h1>
-                         <span class="small grey">{{climate.summary}}</span>
-                     </div>
-                     
-                     <div class="d-flex">
-                         <div class="temp-details flex-grow-1">
-                              <p class="my-1">
-                                  <img src="https://i.imgur.com/B9kqOzp.png" height="17px" >
-          
-                                 <span>{{weatherData.current.wind.speed}} km/hr </span>
-                              </p>
-
-                              <p class="my-1"> 
-                                <img src="https://i.imgur.com/wGSJ8C5.png" height="17px" >
-                                 <span> {{climate.all_day.temperature_max}}&deg; C </span> 
-                              </p>
-
-                              <p class="my-1"> 
-                                  <img src="https://i.imgur.com/wGSJ8C5.png" height="17px" >
-                                  <span>{{climate.all_day.temperature_min}} &deg; C</span>
-                              </p>
-                         </div>
-                         
-                         <div>
-                             <img src="https://i.imgur.com/Qw7npIg.png" width="100px">
-                         </div>
-                         
-                         
-                     </div>
-                      
-        
-                  </div>
-          </div>
-      </div>
-
-
-  </div>
-
-  
- 
-
 
 <!--<section class="weather-results py-5">
   <div class="container">
@@ -158,4 +83,3 @@
 <!-- <div class="ui list" *ngFor="let climate of weatherData.daily.data ">  -->
 <!-- <h6 class="flex-grow-1">{{climate.day}}</h6>
   <h6 class="flex-grow-1">{{climate.summary}}</h6> -->
-
