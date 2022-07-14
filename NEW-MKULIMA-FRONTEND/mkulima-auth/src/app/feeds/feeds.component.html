@@ -57,10 +57,10 @@
             </p>
           </div>
           <div class="feed-replies">
-            <h5>Replies</h5>
+            <h5 (load)="getComments(feed.id)">Replies</h5>
             <div class="replies-card">
               <div class="myreplies" >
-                <div class="reply" *ngFor="let comment of feed.comments">
+                <div class="reply" *ngFor="let comment of comments">
                   <p>
                     {{ comment.comment}}
                   </p>
