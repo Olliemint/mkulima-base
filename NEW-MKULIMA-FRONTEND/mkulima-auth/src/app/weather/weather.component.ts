@@ -15,7 +15,7 @@ export class WeatherComponent implements OnInit {
   hourly!:Hourly;
   daum!:Daum;
   data1!:Daum2;
-    place_id: string = 'Nairobi';
+    place_id: string = '';
     DatePipe:any;
   
 
