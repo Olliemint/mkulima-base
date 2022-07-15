@@ -133,11 +133,12 @@
     height: 350px;
 }
 
-.feed1-img img{
+.img-fluid{
     width: 500px;
     height: 350px;
     padding-top: 45px;
-    margin-left: 60px;
+    margin-left: 30px;
+    
 }
 
 .feed-desc{

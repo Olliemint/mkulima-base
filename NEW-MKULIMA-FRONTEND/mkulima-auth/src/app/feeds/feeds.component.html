@@ -41,7 +41,7 @@
           </div>
         </div>
       </div>
-      <div class="col-md-5">
+      <!-- <div class="col-md-5">
         <div class="feeds" *ngFor="let feed of feeds">
           <div class="feeds-img">
             <img
@@ -86,7 +86,68 @@
             </form>
           </div>
         </div>
-      </div>
+      </div> -->
+
+      <div class="col-md-5" style="margin-left: 12px;">
+        <div class="feed1" *ngFor="let feed of feeds">
+          <div class="feeds-img">
+            <img
+              class="img-fluid"
+              src="{{feed.image}}"
+              alt=""
+            />
+          </div>
+           <div class="feed-desc">
+               <p>{{feed.description}}</p>
+           </div>
+           <div class="feed-replies">
+               <h5>Replies</h5>
+               <div class="replies-card">
+                   <div class="myreplies">
+                    <h5 (click)="getComments(feed.id)">Comments</h5>
+                    <div class="replies-card">
+                      <div class="myreplies">
+        
+                        
+                        <div class="reply" *ngFor="let comment of comments">
+                          <div  *ngIf='equal(feed.id,comment.feeds)'>
+                            <p>
+                              {{ comment.comment}}
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                   </div>
+
+               </div>
+
+
+           </div>
+           <div class="comment-card">
+            <form [formGroup]="form" (ngSubmit)="postComment()">
+              <input
+                class="rounded shadow"
+                type="text"
+                name="comment"
+                id="comment"
+                formControlName="comment"
+                placeholder="Add Comment"
+              >
+              <div class="d-flex justify-content-center">
+              <button type="submit" class="btn btn-success mt-3 ">Post comment</button>
+
+
+              </div>
+            </form>
+
+           </div>
+
+        </div>
+      
+        
+
+    </div>
       <div class="col-md-3" style="margin-left: 34px">
         <div class="card-side1">
           <div class="feed-hero">
