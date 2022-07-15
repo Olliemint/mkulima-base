@@ -133,7 +133,7 @@ export class HomeComponent implements OnInit {
     this.postservice.postFeed(this.feedForm.value).subscribe((ev) => {
       console.log(ev);
       
-      this.router.navigate(['catalogue']);
+      this.router.navigate(['feeds']);
     })
 
   }
