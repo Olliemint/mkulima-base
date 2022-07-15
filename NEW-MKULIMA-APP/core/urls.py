@@ -22,5 +22,6 @@ urlpatterns = [
     path('category/details/<str:pk>',views.CategoryDetail.as_view()),
     path('comment',views.CommentList.as_view()),
     path('comment/details/<str:pk>',views.CommentDetail.as_view()),
+    path('get_comments/<str:id>', views.get_comments),
 
 ]

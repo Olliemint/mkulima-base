@@ -2,6 +2,7 @@
 import datetime
 import random
 import string
+from urllib import response
 from rest_framework import exceptions
 from rest_framework.authentication import get_authorization_header
 from rest_framework.views import APIView
@@ -16,6 +17,8 @@ from rest_framework import generics
 from .serializers import *
 from rest_framework import status
 from django.http import HttpResponse
+
+from rest_framework.decorators import api_view
 
 
 class RegisterAPIView(APIView):
@@ -206,10 +209,22 @@ class CategoryDetail(generics.RetrieveUpdateDestroyAPIView):
 class CommentList(generics.ListCreateAPIView):
     queryset = Comment.objects.all()
     serializer_class =CommentSerializer
-    
-    def getComment(request):
-        
 
 class CommentDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Comment.objects.all()
     serializer_class = CommentSerializer
+
+@api_view(['GET'])
+def get_comments(request,id):
+    feeder_id=request.GET.get('id')
+    print(feeder_id)
+
+    comments = Comment.objects.filter(feeds=id)
+    print(comments)
+    serialize = CommentSerializer(comments, many=True)
+    print(serialize)
+    return Response(serialize.data)
+
+    
+    
+
