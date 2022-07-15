@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { CatalogueFeedService } from 'src/app/services/catalogue-feed.service';
 
 
@@ -9,9 +10,16 @@ import { CatalogueFeedService } from 'src/app/services/catalogue-feed.service';
   styleUrls: ['./feeds.component.css']
 })
 export class FeedsComponent implements OnInit {
-  feeds: any=[];
-  categories: any= [];
-  comments: any= [];
+  feeds: any = [];
+  categories: any = [];
+  comments: any = [];
+
+  form!: FormGroup;
+  angForm: FormGroup = new FormGroup({
+    name: new FormControl('', [Validators.required]),
+  })
+
+
   constructor(private feedService:CatalogueFeedService) { }
 
   ngOnInit(): void {
@@ -30,9 +38,22 @@ export class FeedsComponent implements OnInit {
     this.feedService.getComment(id).subscribe((data)=>{
       this.comments = data;
       console.log(this.comments);
+      console.log(id);
     });
 
   
+  }
+  equal(feed:any, comment:any) {
+    return feed === comment;  
+    console.log(feed,comment)
+    
+  }
+
+  postComment() {
+    this.feedService.postComment(this.form.getRawValue()).subscribe(
+      data=>(console.log(data))
+     
+  );
   }
 
 

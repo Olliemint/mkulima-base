@@ -57,25 +57,33 @@
             </p>
           </div>
           <div class="feed-replies">
-            <h5 (load)="getComments(feed.id)">Replies</h5>
+            <h5 (click)="getComments(feed.id)">Comments</h5>
             <div class="replies-card">
-              <div class="myreplies" >
+              <div class="myreplies">
+
+                
                 <div class="reply" *ngFor="let comment of comments">
-                  <p>
-                    {{ comment.comment}}
-                  </p>
+                  <div  *ngIf='equal(feed.id,comment.feeds)'>
+                    <p>
+                      {{ comment.comment}}
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
           <div class="comment-card">
-            <input
-              class="rounded shadow"
-              type="text"
-              name="comment"
-              id="comment"
-              placeholder="Add Comment"
-            />
+            <form [formGroup]="form" (ngSubmit)="postComment()">
+              <input
+                class="rounded shadow"
+                type="text"
+                name="comment"
+                id="comment"
+                formControlName="comment"
+                placeholder="Add Comment"
+              >
+              <button type="submit">Add Comment</button>
+            </form>
           </div>
         </div>
       </div>

@@ -11,6 +11,8 @@ import { AuthService } from './auth.service';
 })
 export class CatalogueFeedService {
   public BASE_URL = environment.api;
+  public COMMENT_URL = environment.comment;
+
 
   constructor(private http: HttpClient,private authService: AuthService) {}
 
@@ -56,8 +58,16 @@ export class CatalogueFeedService {
   }
 
   getComment(id: number){
-    return this.http.get(`${this.BASE_URL}/comment/${id}`)
+    return this.http.get(`${this.COMMENT_URL}/${id}`)
 
+  }
+
+  postComment(data: any) {
+    const formData = new FormData();
+    formData.append('comment', data.comment);
+     return this.http.post(`${this.BASE_URL}/comments`, formData)
+    
+    
   }
 
 }
